@@ -1,3 +1,6 @@
 [submodule "linux/.config/vifm/vifm-colors"]
 	path = linux/.config/vifm/vifm-colors
 	url = https://github.com/ethull/vifm-colors
+[submodule "macos/.config/vifm/vifm-colors"]
+    path = macos/.config/vifm/vifm-colors
+    url = https://github.com/ethull/vifm-colors

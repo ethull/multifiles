@@ -46,3 +46,6 @@ linux/.config/xfce4/desktop/*
 
 
 #macos
+macos/.config/vifm/vifminfo*
+macos/.config/vifm/vifmimgpdffile
+macos/.config/vifm/vifmimgpdfpage

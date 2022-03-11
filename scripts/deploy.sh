@@ -13,7 +13,7 @@ ln -sf $Path/unix/.vim $HOME/.vim
 [ -d $HOME/.config/nvim ] && rm -r $HOME/.config/nvim
 ln -sf $Path/unix/.config/nvim $HOME/.config/nvim
 
-ln -sf $Path/.gitignore_global $HOME/.gitignore
+ln -sf $Path/.gitignore_global $HOME/.gitignore_global
 
 #tmux only reads $HOME/.tmux.conf
 [ -f $HOME/.tmux.conf ] && rm -r $HOME/.tmux.conf
@@ -60,5 +60,7 @@ ln -sf $Path/linux/.xinitrc $HOME/.xinitrc
 
 
 ## macos
-ln -sf $Path/.bashrc $HOME/.bashrc
+ln -sf $Path/macos/.zshrc $HOME/.zshrc
 
+[ -d $HOME/.config/vifm ] && rm -r $HOME/.config/vifm
+ln -sf $Path/macos/.config/vifm $HOME/.config/vifm
