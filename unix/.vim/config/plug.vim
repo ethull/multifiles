@@ -95,6 +95,7 @@ endif
 Plug 'tpope/vim-obsession'
 """ other
 Plug 'ludwig/split-manpage.vim'
+Plug 'junegunn/goyo.vim'
 """" extend native interface to unicode
 Plug 'chrisbra/unicode.vim'
 """" exe external cmds asyncronously
