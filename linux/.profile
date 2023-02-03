@@ -73,3 +73,13 @@ export PATH=/usr/local/texlive/2021/bin/x86_64-linux${PATH:+:${PATH}}
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info${INFOPATH:+:${INFOPATH}}
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man${MANPATH:+:${MANPATH}}
 unset MANPATH
+
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+
+# rust
+. "$HOME/.cargo/env"
+
+# scala
+export PATH="$PATH:/home/emera/.local/share/coursier/bin"
