@@ -1,15 +1,6 @@
-"" cmd mode abbreviations
-"shortcuts/autocorrect
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
+"" cmd mode abbreviations (shortcuts/autocorrect)
+"cnoreabbrev W! w!
+"cnoreabbrev Q! q!
 
 "" splits
 noremap <Leader>s :<C-u>split<CR>
@@ -58,33 +49,11 @@ nnoremap <leader>e. :put=expand('%:p')<CR>
 
 "" clipboard setup
 noremap Y y$
-""" join selection and unamed clipboards
-" + = selection clipboard (global), * = unamed clipboard 
-"if has('unnamedplus')
-"  set clipboard=unnamed,unnamedplus
-""" in normal mode ctrl-x/ctrl-c/ctrl-v use the global register (use normal y and p for unamed)
-"noremap <C-x> "+x
-"noremap <C-c> "+y
-"noremap <C-v> "+P
-" remap visual block mode (that we just moved)
-"noremap <m-v> <C-v>
-"noremap <space>v <C-v>
-""" map global clipboard cmds to individual keys, waste of leader keys
-"noremap <Leader>x "+x<CR>
-"noremap <Leader>y "+y<CR>
-"noremap <Leader>Y "+y$
-"noremap <Leader>p "+p<CR>
-"noremap <Leader>P "+P<CR>
-""" rather than individual bindings, just map global register to signal key
+""" map global register to ; (so can use ;yy for copy to global register)
 noremap ; "+
 """ in insert mode ctrl-c is disabled, ctrl-v copies from the unamed register
 "inoremap <C-c> <NOP>
 "inoremap <C-v> <C-r>"
-""" if has('macunix')
-"  " pbcopy for OSX copy/paste
-"  vmap <C-x> :!pbcopy<CR>
-"  vmap <C-c> :w !pbcopy<CR><CR>
-"endif
 
 "" visual mode
 """ move visual block
