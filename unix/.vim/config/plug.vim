@@ -22,6 +22,7 @@ endif
 "" pkgs to installed
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
+
 """ navigation
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -32,6 +33,7 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
+
 """ appearance
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -39,79 +41,65 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-""" dev tools
-"""" multi-language specific features
-""""" async linter, optionally basic lsp client
+
+""" utils
+"Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+"Plug 'tpope/vim-commentary'
+"Plug 'wellle/targets.vim'
+"Plug 'justinmk/vim-sneak'
+Plug 'liuchengxu/vim-which-key'
+
+""" general dev tools
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
+"lines show indentation, alternative to following for spaces :set list lcs=tab:\|\
+Plug 'Yggdroot/indentLine'
+"contains language packs
+Plug 'sheerun/vim-polyglot'
+"sessions
+Plug 'tpope/vim-obsession'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
+
+""" dev tools text editing
+"linter
 if (g:editor_mode == "textedit" || g:editor_mode == "ide")
   Plug 'dense-analysis/ale'
-endif
-""""" versatile lsp client
-if (g:editor_mode == "ide")
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
-""""" auto set cwd to proj root dir
-if (g:editor_mode == "ide")
-  Plug 'airblade/vim-rooter', {'branch': 'release'}
-endif
-""""" expand abbreviations
-Plug 'mattn/emmet-vim'
-""""" snippets
-" Plug 'SirVer/ultisnips'
+"expand abbreviations
+  Plug 'mattn/emmet-vim'
+"snippets
+  "Plug 'SirVer/ultisnips'
 "predefined snippets
-Plug 'honza/vim-snippets'
-"""" ctags
-"sidebar that displays ctags-generated tags of the current file, ordered by their scope
-"Plug 'majutsushi/tagbar'
-"""" git
-Plug 'tpope/vim-fugitive'
-"required by fugitive to :Gbrowse
-Plug 'tpope/vim-rhubarb'
-"visual repersentation of git diff
-Plug 'airblade/vim-gitgutter'
-"""" programming util
-Plug 'tpope/vim-surround'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-commentary'
-"""" lines show indentation, alternative to following for spaces :set list lcs=tab:\|\
-Plug 'Yggdroot/indentLine'
-"""" contains language packs
-Plug 'sheerun/vim-polyglot'
-"""" highlight colors with actual colour //preview colours
-Plug 'gorodinskiy/vim-coloresque'
-"""" lang specific
-""""" markdown
-"Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-if (g:editor_mode == "textedit" || g:editor_mode == "ide")
+  Plug 'honza/vim-snippets'
+"ctags
+  "Plug 'majutsushi/tagbar'
+  "Plug 'ludovicchabant/vim-gutentags'
+"preview colours in file
+  Plug 'gorodinskiy/vim-coloresque'
+"markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md', 'vim-plug']}
 endif
-"Plug 'gabrielelana/vim-markdown'
-"Plug 'vim-pandoc/vim-pandoc-syntax', {'for': ['markdown', 'md']}
-Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
-""""" latex
-if (g:editor_mode == "textedit" || g:editor_mode == "ide")
+
+""" dev tools ide
+"lsp
+if (g:editor_mode == "ide")
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': 'CocStart'}
+"auto set cwd to proj root dir
+  Plug 'airblade/vim-rooter', {'branch': 'release'}
+"latex
   Plug 'lervag/vimtex', {'for': ['tex', 'latex']}
 endif
-""" vim-session
-Plug 'tpope/vim-obsession'
+
 """ other
 Plug 'ludwig/split-manpage.vim'
 Plug 'junegunn/goyo.vim'
-"""" extend native interface to unicode
+"extend native interface to unicode
 Plug 'chrisbra/unicode.vim'
-"""" exe external cmds asyncronously
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif   
-Plug 'Shougo/vimproc.vim', {'do': g:make}
-"""" leader key prompt/guide
-Plug 'liuchengxu/vim-which-key'
-"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-
-"" Include user's extra bundle
-if filereadable(expand("~/.vimrc.local.bundles"))
-  source ~/.vimrc.local.bundles
-endif
 
 call plug#end()
 
