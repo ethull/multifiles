@@ -83,6 +83,8 @@ if (g:editor_mode == "textedit" || g:editor_mode == "ide")
   Plug 'gorodinskiy/vim-coloresque'
 "markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md', 'vim-plug']}
+  "in terminal preview
+  Plug 'jclsn/glow.vim'
 endif
 
 """ dev tools ide
