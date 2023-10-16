@@ -22,6 +22,7 @@ let g:ale_javascript_eslint_options = '--resolve-plugins-relative-to /usr/local/
     \'html': ['htmlhint'],
     \'tex': ['chktex', 'lacheck'],
     \'php': ['php'],
+    \'go': ['govet'],
     \'vim': ['vint'],
     \'sh': ['shell','shellcheck']
     \})
