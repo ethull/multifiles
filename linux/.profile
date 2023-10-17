@@ -83,3 +83,6 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 # scala
 export PATH="$PATH:/home/emera/.local/share/coursier/bin"
+
+# qt app theme
+QT_QPA_PLATFORMTHEME=qt5ct
