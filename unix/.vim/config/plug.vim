@@ -38,7 +38,7 @@ endif
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "get gvim colour schemes to work in terminal vim
-Plug 'vim-scripts/CSApprox'
+"Plug 'vim-scripts/CSApprox'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
@@ -102,6 +102,7 @@ Plug 'ludwig/split-manpage.vim'
 Plug 'junegunn/goyo.vim'
 "extend native interface to unicode
 Plug 'chrisbra/unicode.vim'
+Plug 'dstein64/vim-startuptime'
 
 call plug#end()
 
