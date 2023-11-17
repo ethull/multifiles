@@ -51,14 +51,19 @@ xset s 6000 6000
 #java vars
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
-#ruby rbenv vars
+# ruby rbenv vars
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 #export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 #if using gem --user-install with no rbenv
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
-export PATH="$HOME/.ghcup/bin:$PATH"
+#export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+#export PATH="$HOME/.ghcup/bin:$PATH"
+
+#export GEM_HOME="$HOME/gems"
+#export PATH="$HOME/gems/bin:$PATH"
+eval "$(/home/emera/.rbenv/bin/rbenv init - bash)"
+
 
 #echo 'eval "$(/home/emera/.linuxbrew/bin/brew shellenv)"' >> /home/emera/.profile
 export PATH="$HOME/.linuxbrew/bin:$PATH"
