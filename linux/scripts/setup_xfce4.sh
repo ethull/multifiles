@@ -12,15 +12,6 @@ sudo cp -r midnight/Midnight-OrangeNight /usr/share/themes
 rm -r midnight
 xfconf-query -c xfwm4 -p /general/theme -s Midnight-OrangeNight
 
-### grub theme
-git clone https://github.com/vinceliuice/grub2-themes 
-(
-    cd grub2-themes
-    chmod +x ./install.sh
-    sudo ./install.sh -b -t slaze
-)
-rm -r grub2-themes
-
 ## keybindings (under testing)
 ### window rearrangement keys 
 #aim is to be similar to rectangle

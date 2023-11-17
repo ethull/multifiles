@@ -20,15 +20,6 @@ sudo cp -r midnight/Midnight-OrangeNight /usr/share/themes
 gsettings set org.gnome.desktop.interface gtk-theme "Midnight-OrangeNight"
 gsettings set org.gnome.desktop.wm.preferences theme "Midnight-OrangeNight"
 
-### grub theme
-git clone https://github.com/vinceliuice/grub2-themes 
-(
-    cd grub2-themes
-    chmod +x ./install.sh
-    sudo ./install.sh --slaze
-)
-rm -r grub2-themes
-
 ## graphics
 sudo dpkg --add-architecture i386 
 ### nvidia (can use default nouveau if not gaming)
