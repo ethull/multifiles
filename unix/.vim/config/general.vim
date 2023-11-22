@@ -2,6 +2,7 @@
 set nocompatible
 """ swap files
 "set directory=/tmp
+set directory=$HOME/.vim/swapfiles//
 """ lookup 
 set autoread
 """ encoding
