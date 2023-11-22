@@ -9,6 +9,7 @@ unix/.vim/.netrwhist
 unix/.vim/session/*
 unix/.vim/sessions/*
 unix/.test-vim/*
+unix/.config/nvim/plugged
 
 unix/.moc/cache/*
 unix/.moc/equalizer
