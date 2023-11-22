@@ -52,6 +52,7 @@ syntax on
 set ruler
 set number
 let no_buffers_menu=1
+"set background=dark
 silent! colorscheme zenburn
 " disable match brackets (to stop annoying bracket jumping), instead use %
 let g:loaded_matchparen=1

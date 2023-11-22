@@ -1,6 +1,6 @@
 "" cmd mode abbreviations (shortcuts/autocorrect)
-"cnoreabbrev W! w!
-"cnoreabbrev Q! q!
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
 
 "" splits
 noremap <Leader>s :<C-u>split<CR>
@@ -40,12 +40,6 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>e. :put=expand('%:p')<CR>
-""" buffers
-""" buffer nav
-"noremap <leader>bn :bn<CR>
-"noremap <leader>bp :bp<CR>
-" close buffer
-"noremap <leader>bc :bd<CR>
 
 "" clipboard setup
 noremap Y y$
