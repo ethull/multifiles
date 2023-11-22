@@ -1,5 +1,5 @@
 " # vim-plug setup
-let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+let vimplug_exists=expand("~/.config/nvim/autoload/plug.vim")
 
 " skip loading plugins if: told to via config or file is too large
 if (g:editor_mode == "noplugin" || g:largeFile)
@@ -21,7 +21,7 @@ endif
 
 " # pkgs to installed
 " Required:
-call plug#begin(expand('~/.vim/plugged'))
+call plug#begin(expand('~/.config/nvim/plugged'))
 
 " ## navigation
 Plug 'scrooloose/nerdtree'
@@ -84,7 +84,7 @@ if (g:editor_mode == "textedit" || g:editor_mode == "ide")
 "markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md', 'vim-plug']}
   "in terminal preview
-  Plug 'jclsn/glow.vim'
+  "Plug 'jclsn/glow.vim'
 endif
 
 " ## dev tools ide
