@@ -49,6 +49,9 @@ Plug 'alvan/vim-closetag'
 "Plug 'wellle/targets.vim'
 "Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vim-which-key'
+"switch buffers quickly
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 " ## general dev tools
 Plug 'tpope/vim-fugitive'
