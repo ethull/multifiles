@@ -78,8 +78,8 @@ endif
 if &term =~ '256color'
   set t_ut=
 endif
-" disable the blinking cursor.
-set gcr=a:blinkon0
+" disable the blinking cursor (breaks cursor on nvim)
+"set gcr=a:blinkon0
 set scrolloff=3
 " status bar
 set laststatus=2
