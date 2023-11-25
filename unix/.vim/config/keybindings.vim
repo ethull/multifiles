@@ -1,4 +1,6 @@
 "" cmd mode abbreviations (shortcuts/autocorrect)
+cnoreabbrev W w
+cnoreabbrev Q q
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 
