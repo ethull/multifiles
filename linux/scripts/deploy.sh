@@ -97,10 +97,14 @@ sudo cp -r $CWD/linux/assets/themes/Arc-ZenburnPlus /usr/share/themes/Arc-Zenbur
 sudo cp -r $CWD/linux/assets/themes/Numix /usr/share/themes/Numix
 sudo cp -r $CWD/linux/assets/themes/Midnight-OrangeNight /usr/share/themes/Midnight-OrangeNight
 
-## xfce displays, keybindings, power settings
+## xfce displays, keybindings, power settings, win manager, xsettings (gtk theme)
 refresh_file $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
 ln -sf $CWD/linux/.config/xfce4/xfce-perchannel-xml/displays.xml $HOME/.config/xfce4/xfce-perchannel-xml/displays.xml
 refresh_file $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 ln -sf $CWD/linux/.config/xfce4/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml $HOME/.config/xfce4/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 refresh_file $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
 ln -sf $CWD/linux/.config/xfce4/xfce-perchannel-xml/xfce4-power-manager.xml $HOME/.config/xfce4/xfce-perchannel-xml/xfce4-power-manager.xml
+refresh_file $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+ln -sf $CWD/linux/.config/xfce4/xfce-perchannel-xml/xfwm4.xml $HOME/.config/xfce4/xfce-perchannel-xml/xfwm4.xml
+refresh_file $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+ln -sf $CWD/linux/.config/xfce4/xfce-perchannel-xml/xfwm4.xml $HOME/.config/xfce4/xfce-perchannel-xml/xsettings.xml
