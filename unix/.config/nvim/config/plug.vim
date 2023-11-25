@@ -35,8 +35,9 @@ else
 endif
 
 " ## appearance
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"airline causes cursor issue in nvim
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'phha/zenburn.nvim'
 "get gvim colour schemes to work in terminal vim
 "Plug 'vim-scripts/CSApprox'
 Plug 'luochen1990/rainbow'
@@ -58,16 +59,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 "lines show indentation, alternative to following for spaces :set list lcs=tab:\|\
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 "contains language packs
 Plug 'sheerun/vim-polyglot'
-"sessions
+" ### sessions
 Plug 'tpope/vim-obsession'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-" markdown
+" ### markdown
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
+Plug 'ellisonleao/glow.nvim'
 
 " ## dev tools text editing
 "linter
@@ -111,3 +113,11 @@ call plug#end()
 
 " Required:
 filetype plugin indent on
+
+"todo stop errs when lua plugins not loaded
+lua << END
+require('lualine').setup{options = {theme = require'lualine.themes.gruvbox'}}
+require('ibl').setup()
+require('glow').setup()
+END
+
