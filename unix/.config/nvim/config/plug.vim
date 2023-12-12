@@ -39,6 +39,7 @@ if index(g:plugin_groups, "light") >= 0
   endif
 
   Plug 'nvim-lualine/lualine.nvim'
+  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'phha/zenburn.nvim'
   Plug 'luochen1990/rainbow'
   let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
@@ -66,6 +67,11 @@ if index(g:plugin_groups, "light") >= 0
   Plug 'junegunn/goyo.vim'
   Plug 'chrisbra/unicode.vim'
   Plug 'dstein64/vim-startuptime'
+
+  Plug 'tiagovla/scope.nvim'
+  Plug 'nanozuki/tabby.nvim'
+  Plug 'stevearc/resession.nvim'
+
 endif
 
 if index(g:plugin_groups, "textedit") >= 0
@@ -86,9 +92,5 @@ call plug#end()
 filetype plugin indent on
 
 "todo stop errs when lua plugins not loaded
-lua << END
-require('lualine').setup{options = {theme = require'lualine.themes.gruvbox'}}
-require('ibl').setup()
-require('glow').setup()
-END
-
+let path = expand('<sfile>:p:h')
+exec 'source' path . '/lua/setup.lua'
