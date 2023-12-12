@@ -1,23 +1,25 @@
-" get filesize, so we dont load plugins when editing very large files
-" file is large from 10mb
+" noplugin if filesize is too big (> 10mb)
 let g:largeFileSize = 1024 * 1024 * 10
-"let g:largeFile = getfsize(expand("<afile>")) > g:largeFileSize
 let g:largeFile = getfsize(expand("%:p")) > g:largeFileSize
 
-"load users config options
+" source editor mode and plugin groups
 if filereadable(expand("~/.vim/config/config_manual.vim"))
   source ~/.vim/config/config_manual.vim
-  if filereadable(expand("~/.vim/config/plug.vim"))
-    source ~/.vim/config/plug.vim
-  else
-    filetype plugin indent on
-  endif
 endif
-"load general vim settings
+
+" load plugins
+if filereadable(expand("~/.vim/config/plug.vim"))
+  source ~/.vim/config/plug.vim
+else
+  filetype plugin indent on
+endif
+
+" load general vim settings
 if filereadable(expand("~/.vim/config/general.vim"))
   source ~/.vim/config/general.vim
 endif
-"load general keybindings (does not include plugin keybindings)
+
+" load general (non-plugin) keybindings
 if filereadable(expand("~/.vim/config/keybindings.vim"))
   source ~/.vim/config/keybindings.vim
 endif
