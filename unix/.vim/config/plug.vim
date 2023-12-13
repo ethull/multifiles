@@ -1,10 +1,5 @@
-"" vim-plug setup
+" # vim-plug setup
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
-
-"skip loading plugins if: told to via config or file is too large
-if (g:editor_mode == "noplugin" || g:largeFile)
-  finish
-endif
 
 if !filereadable(vimplug_exists)
   if !executable("curl")
@@ -19,90 +14,70 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
-"" pkgs to installed
+" skip loading plugins if: told to via config or file is too large
+if ( g:load_plugins != 1 || g:largeFile)
+  finish
+endif
+
+" # pkgs to installed
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
-""" navigation
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vifm/vifm.vim'
-if isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-  Plug 'junegunn/fzf.vim'
+if index(g:plugin_groups, "light") >= 0
+  Plug 'chaoren/vim-wordmotion'
+  Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'vifm/vifm.vim'
+  if isdirectory('/usr/local/opt/fzf')
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+  else
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+    Plug 'junegunn/fzf.vim'
+  endif
+
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'luochen1990/rainbow'
+  let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+  Plug 'alvan/vim-closetag'
+  Plug 'liuchengxu/vim-which-key'
+
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'airblade/vim-gitgutter'
+
+  Plug 'Yggdroot/indentLine'
+  Plug 'sheerun/vim-polyglot'
+
+  Plug 'tpope/vim-obsession'
+  Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-session'
+
+  Plug 'godlygeek/tabular'
+  Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
+
+  Plug 'ludwig/split-manpage.vim'
+  Plug 'junegunn/goyo.vim'
+  Plug 'chrisbra/unicode.vim'
+  Plug 'dstein64/vim-startuptime'
 endif
 
-""" appearance
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"get gvim colour schemes to work in terminal vim
-"Plug 'vim-scripts/CSApprox'
-Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
-""" utils
-"Plug 'tpope/vim-surround'
-Plug 'alvan/vim-closetag'
-"Plug 'tpope/vim-commentary'
-"Plug 'wellle/targets.vim'
-"Plug 'justinmk/vim-sneak'
-Plug 'liuchengxu/vim-which-key'
-
-""" general dev tools
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
-"lines show indentation, alternative to following for spaces :set list lcs=tab:\|\
-Plug 'Yggdroot/indentLine'
-"contains language packs
-Plug 'sheerun/vim-polyglot'
-"sessions
-Plug 'tpope/vim-obsession'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-" markdown
-Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
-
-""" dev tools text editing
-"linter
-if (g:editor_mode == "textedit" || g:editor_mode == "ide")
+if index(g:plugin_groups, "textedit") >= 0
   Plug 'dense-analysis/ale'
-"expand abbreviations
   Plug 'mattn/emmet-vim'
-"snippets
   "Plug 'SirVer/ultisnips'
-"predefined snippets
-  Plug 'honza/vim-snippets'
-"ctags
-  "Plug 'majutsushi/tagbar'
-  "Plug 'ludovicchabant/vim-gutentags'
-"preview colours in file
+  "Plug 'honza/vim-snippets'
   Plug 'gorodinskiy/vim-coloresque'
-"markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md', 'vim-plug']}
-  "in terminal preview
   Plug 'jclsn/glow.vim'
 endif
 
-""" dev tools ide
-"lsp
-if (g:editor_mode == "ide")
+if index(g:plugin_groups, "ide") >= 0
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'on': 'CocStart'}
-"auto set cwd to proj root dir
   Plug 'airblade/vim-rooter', {'branch': 'release'}
-"latex
   Plug 'lervag/vimtex', {'for': ['tex', 'latex']}
 endif
-
-""" other
-Plug 'ludwig/split-manpage.vim'
-Plug 'junegunn/goyo.vim'
-"extend native interface to unicode
-Plug 'chrisbra/unicode.vim'
-Plug 'dstein64/vim-startuptime'
 
 call plug#end()
 
