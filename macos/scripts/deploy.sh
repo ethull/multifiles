@@ -8,6 +8,13 @@ CWD=$(pwd)
 
 ## setup program configs
 
+### vscode
+[ -f "$HOME/Library/Application Support/Code/User/settings.json" ] && rm -r "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf $CWD/unix/.vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
+/Users/L014141/Library/Application Support/Code/User/settings.json
+/Users/L014141/Projects/mac-setup/multifiles/unix/.vscode/settings.json
+
 ### vim
 [ -d $HOME/.vim ] && rm -r $HOME/.vim
 ln -sf $CWD/unix/.vim $HOME/.vim
