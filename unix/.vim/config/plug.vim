@@ -35,8 +35,8 @@ if index(g:plugin_groups, "light") >= 0
     Plug 'junegunn/fzf.vim'
   endif
 
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  "Plug 'vim-airline/vim-airline'
+  "Plug 'vim-airline/vim-airline-themes'
   Plug 'luochen1990/rainbow'
   let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
@@ -53,6 +53,8 @@ if index(g:plugin_groups, "light") >= 0
   Plug 'tpope/vim-obsession'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-session'
+  "Plug 'zefei/vim-wintabs'
+  "Plug 'dosimple/workspace.vim'
 
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}

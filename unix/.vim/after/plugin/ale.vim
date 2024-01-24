@@ -11,9 +11,12 @@ let g:ale_fixers = {}
 let g:ale_linters_explicit = 1
 " if you have custom plugins in a global eslint file, eslintv6 wont find them
 let g:ale_javascript_eslint_options = '--resolve-plugins-relative-to /usr/local/lib/node_modules'
+" pylint config
+let g:ale_python_pylint_options = '--rcfile ~/.pylintrc'
+let g:ale_echo_msg_format='[%linter%] [%severity%] %code% %s'
 
 :call extend(g:ale_linters, {
-    \'python': ['pyflakes'],
+    \'python': ['pylint'],
     \'javascript': ['eslint'],
     \'jsx': ['eslint'],
     \'java': ['javac','checkstyle'],
