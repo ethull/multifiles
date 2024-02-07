@@ -53,6 +53,8 @@ if index(g:plugin_groups, "light") >= 0
   Plug 'tpope/vim-obsession'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-session'
+  "Plug 'zefei/vim-wintabs'
+  "Plug 'dosimple/workspace.vim'
 
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
