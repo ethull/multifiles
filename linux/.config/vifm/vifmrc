@@ -12,7 +12,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=nvim
+set vicmd=vim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -453,9 +453,10 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-nnoremap o :!nvim %f<cr>
+nnoremap oo :!vim %f<cr>
+nnoremap on :!nvim %f<cr>
 " Open file in existing instance of gvim
-nnoremap O :! sudo vim %f<cr>
+nnoremap os :! sudo vim %f<cr>
 "nnoremap o :!gvim --remote-tab-silent %f<cr>
 " Open file in new instance of gvim
 "nnoremap O :!gvim %f<cr>
