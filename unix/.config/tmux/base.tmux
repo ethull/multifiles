@@ -35,7 +35,7 @@ set -g @resurrect-strategy-nvim 'session'
 
 
 if "test ! -d ~/.config/tmux/plugins/tpm" \
-   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && ~/.config/tmux/plugins/tpm/bin/install_plugins'"
 
 # initialize tmux plugin manager
 run -b '~/.config/tmux/plugins/tpm/tpm'
