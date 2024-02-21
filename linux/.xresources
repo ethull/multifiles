@@ -4,8 +4,14 @@
 xterm*locale: true
 xterm*termName: xterm-256color
 xterm*title: xterm-256
-xterm*font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
 xterm*geometry: +0+0
+
+xterm*font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
+xterm*renderFont: true
+!xterm*faceName: xft:0xProto Nerd Font Mono
+!xterm*faceName: 0xProto Nerd Font Mono:style=Regular
+xterm*faceName: 0xProtoNerdFontMono-Regular
+xterm*faceSize: 16
 
 !xterm*scrollBar: true
 !xterm*rightScrollBar: true
@@ -17,11 +23,8 @@ xterm*foreground: #ffffff
 xterm*background: #3a3a3a
 xterm*cursorColor: #ffffff
 
-xterm*renderFont: true
-xterm*faceName: xft:Mononoki Nerd Font
 !xft:JoyPixels:size=12
 !xft:Monospace:style=Medium:size=12   
-xterm*faceSize: 12
 xterm*utf8: 2
 xterm*selectToClipboard:true
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
