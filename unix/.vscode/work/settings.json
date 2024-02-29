@@ -1,0 +1,53 @@
+{
+    // telemetry
+    "telemetry.telemetryLevel": "off",
+    "workbench.enableExperiments": false,
+    
+    // general settings
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    
+    // accessability settings
+    "editor.fontSize": 18,
+    "debug.console.fontSize": 18,
+    "terminal.integrated.fontSize": 18,
+    "chat.editor.fontSize": 18,
+    "markdown.preview.fontSize": 16,
+    "window.zoomLevel": 1,
+
+    // general extensions
+    "workbench.colorTheme": "Zenburn",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    //"vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim"
+
+    // other extension/language settings
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    //"pylint.args": ["--rcfile=/Users/L014141/.pylintrc"]
+    "pylint.args": [
+        "--rcfile=.github/linters/pylintrc"
+    ],
+    "githubPullRequests.pullBranch": "never",
+    "gitlens.telemetry.enabled": false
+}
