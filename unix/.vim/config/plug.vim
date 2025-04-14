@@ -1,4 +1,4 @@
-" # vim-plug setup
+" vim-plug setup
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
 if !filereadable(vimplug_exists)
@@ -19,7 +19,7 @@ if ( g:load_plugins != 1 || g:largeFile)
   finish
 endif
 
-" # pkgs to installed
+" pkgs to installed
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
@@ -35,11 +35,7 @@ if index(g:plugin_groups, "light") >= 0
     Plug 'junegunn/fzf.vim'
   endif
 
-  "Plug 'vim-airline/vim-airline'
-  "Plug 'vim-airline/vim-airline-themes'
   Plug 'luochen1990/rainbow'
-  let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
   Plug 'alvan/vim-closetag'
   Plug 'liuchengxu/vim-which-key'
 
@@ -53,8 +49,6 @@ if index(g:plugin_groups, "light") >= 0
   Plug 'tpope/vim-obsession'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-session'
-  "Plug 'zefei/vim-wintabs'
-  "Plug 'dosimple/workspace.vim'
 
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown', {'for': ['markdown', 'md']}
@@ -68,8 +62,6 @@ endif
 if index(g:plugin_groups, "textedit") >= 0
   Plug 'dense-analysis/ale'
   Plug 'mattn/emmet-vim'
-  "Plug 'SirVer/ultisnips'
-  "Plug 'honza/vim-snippets'
   Plug 'gorodinskiy/vim-coloresque'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'md', 'vim-plug']}
   Plug 'jclsn/glow.vim'

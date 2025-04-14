@@ -2,6 +2,9 @@ if ! exists('g:rainbow_active')
     finish
 endif
 
+" set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 1
+
 " luochen1990/rainbow config
 let g:rainbow_conf = {
       \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],

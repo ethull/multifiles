@@ -19,6 +19,11 @@ if filereadable(expand("~/.vim/config/general.vim"))
   source ~/.vim/config/general.vim
 endif
 
+" load autocmds
+if filereadable(expand("~/.vim/config/autocmd.vim"))
+  source ~/.vim/config/autocmd.vim
+endif
+
 " load general (non-plugin) keybindings
 if filereadable(expand("~/.vim/config/keybindings.vim"))
   source ~/.vim/config/keybindings.vim
