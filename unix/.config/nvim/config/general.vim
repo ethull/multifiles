@@ -1,18 +1,13 @@
 " options
-" set nocompatible " NEOVIM: Always set by default in Neovim, not needed
 " swap files
 set directory=$HOME/.vim/swapfiles//
 " lookup 
-" set autoread " NEOVIM: Default in Neovim, automatically reloads files changed outside vim
 
 " encoding
-" set encoding=utf-8 " NEOVIM: UTF-8 is default encoding in Neovim
 set fileencoding=utf-8
 set fileencodings=utf-8
-" set ttyfast " NEOVIM: Not relevant in Neovim, terminal is always considered fast
 
 " fix backspace indent
-" set backspace=indent,eol,start " NEOVIM: Default behavior in Neovim
 " stop delay when changing back to normal mode
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -31,12 +26,7 @@ nnoremap <SPACE> <Nop>
 let mapleader=' '
 let g:maplocalleader = ','
 
-" enable hidden buffers
-" set hidden " NEOVIM: Default in Neovim, allows switching buffers without saving
-
 " searching
-" set hlsearch " NEOVIM: Default in Neovim, highlights search results
-" set incsearch " NEOVIM: Default in Neovim, shows matches as you type
 set ignorecase
 set smartcase
 
@@ -58,8 +48,6 @@ set shortmess+=c
 set signcolumn=yes
 
 " visual settings
-" syntax on " NEOVIM: Syntax highlighting is enabled by default
-" set ruler " NEOVIM: Default in Neovim, shows cursor position
 set number
 let no_buffers_menu=1
 "set background=dark
@@ -68,33 +56,17 @@ silent! colorscheme zenburn
 let g:loaded_matchparen=1
 
 " other stuff
-" set mousemodel=popup " NEOVIM: GUI-specific, less relevant for modern Neovim
-" set t_Co=256 " NEOVIM: Not needed, Neovim handles colors automatically
-" set guioptions=egmrti " NEOVIM: GUI-specific, less relevant for modern Neovim
-" set gfn=Monospace\ 10 " NEOVIM: GUI font, less relevant for modern Neovim
 set fileformats=unix,dos,mac
 if exists('$SHELL')
     set shell=$SHELL
 else
     set shell=/bin/sh
 endif
-" Terminal color settings - NEOVIM: Not needed, Neovim handles terminal colors automatically
-" if $COLORTERM == 'gnome-terminal'
-" set term=gnome-256color
-" else
-" if $TERM == 'xterm'
-"   set term=xterm-256color
-" endif
-" endif  
-" if &term =~ '256color'
-"   set t_ut=
-" endif
 " disable the blinking cursor (breaks cursor on nvim)
 "set gcr=a:blinkon0
 set scrolloff=3
 
 " status bar
-" set laststatus=2 " NEOVIM: Default in Neovim, always show statusline
 set title
 set titleold="yeet 69 420"
 set titlestring=%F
@@ -114,9 +86,6 @@ if !exists('*s:setupWrapping')
   endfunction
 endif
 
-" change cursor in insert mode - NEOVIM: Use modern Neovim approach
-" let &t_SI = "\e[6 q" " NEOVIM: Terminal escape sequences, use guicursor instead
-" let &t_EI = "\e[2 q" " NEOVIM: Terminal escape sequences, use guicursor instead
 " Modern Neovim cursor shape configuration:
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
  
