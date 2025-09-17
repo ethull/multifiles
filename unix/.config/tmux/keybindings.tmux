@@ -37,22 +37,42 @@ bind X confirm-before -p "kill-window #W? (y/n)" kill-window
 bind-key -r "<" swap-window -d -t -1
 bind-key -r ">" swap-window -d -t +1
 
-##
 # easy config reloads
-bind r source-file ~/.tmux.conf
+bind r source-file ~/.tmux.conf \; display-message "Config Reloaded!"
 
-## vim selection
-unbind [ # todo neccessary?
+
+# vim
+
+## vi style keys
+# Use vi keybindings for tmux commandline input.
+# Note that to get command mode you need to hit ESC twice...
+set -g status-keys vi
+# Use vi keybindings in copy and choice modes
+setw -g mode-keys vi
+
+## vim selection for copy-mode
+unbind [
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
-bind-key -Tcopy-mode-vi 'v' send -X begin-selection
-# bind-key -Tcopy-mode-vi 'y' send -X copy-pipe "~/.copy"
-# global cp
-bind -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel "xsel -i --clipboard"
-bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -i --clipboard"
-#bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
-bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xsel -i --clipboard"
+
+# yank to global clipboard without exiting copy-mode
+bind -T copy-mode-vi v send -X begin-selection
+# macOS uses pbcopy, Linux uses xclip/xsel
+if-shell 'uname | grep -q Darwin' \
+  "bind -T copy-mode-vi y send -X copy-pipe 'pbcopy'" \
+  "bind -T copy-mode-vi y send -X copy-pipe 'xclip -selection clipboard -in'"
+
+# also make enter behave the same way
+if-shell 'uname | grep -q Darwin' \
+  "bind -T copy-mode-vi Enter send -X copy-pipe 'pbcopy'" \
+  "bind -T copy-mode-vi Enter send -X copy-pipe 'xclip -selection clipboard -in'"
+
+# mouse drag → copy to clipboard, stay in copy-mode
+if-shell 'uname | grep -q Darwin' \
+  "bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe 'pbcopy'" \
+  "bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe 'xclip -selection clipboard -in'"
+
 
 ## plugins keys 
 set -g @jump-key 'g'
@@ -62,13 +82,6 @@ bind-key s choose-tree -Zs
 # tmux-fzf: F
 set -g @resurrect-save 'S'
 set -g @resurrect-restore 'R'
-
-
-# Use vi keybindings for tmux commandline input.
-# Note that to get command mode you need to hit ESC twice...
-set -g status-keys vi
-# Use vi keybindings in copy and choice modes
-setw -g mode-keys vi
 
 # easily toggle synchronization (mnemonic: e is for echo)
 # sends input to all panes in a given window.
@@ -87,19 +100,3 @@ bind E setw synchronize-panes off
 # moved from w (for new window)
 # bind c choose-tree -Zw
 
-# smart pane switching with awareness of vim splits
-# this doesnt work properlly
-# Source: https://github.com/christoomey/vim-tmux-navigator
-#is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-#   | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-#is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?x?)(diff)?$"'
-#bind -n C-h if-shell "$is_vim" "send-keys C-h" "select-pane -L"
-#bind -n C-j if-shell "$is_vim" "send-keys C-j" "select-pane -D"
-#bind -n C-k if-shell "$is_vim" "send-keys C-k" "select-pane -U"
-#bind -n C-l if-shell "$is_vim" "send-keys C-l" "select-pane -R"
-#bind -n C-\\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
-#bind-key -T copy-mode-vi C-h select-pane -L
-#bind-key -T copy-mode-vi C-j select-pane -D
-#bind-key -T copy-mode-vi C-k select-pane -U
-#bind-key -T copy-mode-vi C-l select-pane -R
-#bind-key -T copy-mode-vi C-\\ select-pane -l

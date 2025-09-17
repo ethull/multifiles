@@ -20,10 +20,10 @@ set -g @tpm_plugins '            \
     tmux-plugins/tpm             \
     sainnhe/tmux-fzf             \
     tmux-plugins/tmux-cpu        \
-    tmux-plugins/tmux-urlview    \
     tmux-plugins/tmux-resurrect  \
     schasse/tmux-jump            \
 '
+# tmux-plugins/tmux-urlview    \
 # tmux-plugins/tmux-sensible   \
 # tmux-plugins/tmux-yank       \
 # jimeh/tmux-themepack         \
