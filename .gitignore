@@ -8,6 +8,7 @@ unix/.vim/plugged
 unix/.vim/.netrwhist
 unix/.vim/session/*
 unix/.vim/sessions/*
+unix/.vim/swapfiles/*
 unix/.test-vim/*
 
 unix/.config/nvim/plugged
@@ -53,3 +54,5 @@ linux/.config/xfce4/desktop/*
 macos/.config/vifm/vifminfo*
 macos/.config/vifm/vifmimgpdffile
 macos/.config/vifm/vifmimgpdfpage
+
+any/obsidian/.obsidian/plugins/*
