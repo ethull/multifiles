@@ -16,6 +16,9 @@ setw -g aggressive-resize on
 set -g set-clipboard on
 
 ### plugins
+# Set plugin path BEFORE defining plugins (critical for proper initialization)
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins/'
+
 set -g @tpm_plugins '            \
     tmux-plugins/tpm             \
     sainnhe/tmux-fzf             \
@@ -29,7 +32,7 @@ set -g @tpm_plugins '            \
 # jimeh/tmux-themepack         \
 # wfxr/tmux-fzf-url            \
 
-set -g @resurrect-processes 'vim vi nvim vifm mocp ssh'
+set -g @resurrect-processes 'vim vi nvim vifm mocp ssh caffeinate'
 set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
 

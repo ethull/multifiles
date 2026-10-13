@@ -53,6 +53,7 @@ setw -g mode-keys vi
 ## vim selection for copy-mode
 unbind [
 bind Escape copy-mode
+bind -T copy-mode-vi Escape send -X cancel # quit copy mode with Esc, q still also works
 unbind p
 bind p paste-buffer
 
